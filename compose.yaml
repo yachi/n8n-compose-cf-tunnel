@@ -63,6 +63,7 @@ services:
 
   playwright-mcp:
     image: mcr.microsoft.com/playwright:v1.50.0-noble
+    restart: always
     entrypoint: /playright-mcp-entrypoint.sh
     volumes:
       - ./playright-mcp-entrypoint.sh:/playright-mcp-entrypoint.sh
