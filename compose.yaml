@@ -60,13 +60,13 @@ services:
     image: cloudflare/cloudflared
     restart: always
     command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN} --url https://traefik:443
-
   playwright-mcp:
-    image: mcr.microsoft.com/playwright:v1.50.0-noble
+    image: mcr.microsoft.com/playwright/mcp
     restart: always
-    entrypoint: /playright-mcp-entrypoint.sh
-    volumes:
-      - ./playright-mcp-entrypoint.sh:/playright-mcp-entrypoint.sh
+    entrypoint: node
+    command: ["cli.js", "--headless", "--browser", "chromium", "--no-sandbox", "--port", "8931", "--host", "0.0.0.0"]
+    ports:
+      - "8931:8931"
 
 volumes:
   n8n_data:
