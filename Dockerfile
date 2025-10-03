@@ -9,7 +9,7 @@ USER root
 RUN apk add --no-cache python3 py3-pip ffmpeg
 
 # Install/update yt-dlp
-RUN pip install --upgrade yt-dlp
+RUN pip install --break-system-packages --upgrade yt-dlp
 
 # Switch back to the non-root node user
 USER node
