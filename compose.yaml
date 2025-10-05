@@ -67,7 +67,7 @@ services:
     image: mcr.microsoft.com/playwright/mcp
     restart: always
     entrypoint: node
-    command: ["cli.js", "--headless", "--browser", "chromium", "--no-sandbox", "--port", "8931", "--host", "0.0.0.0"]
+    command: ["cli.js", "--headless", "--browser", "chromium", "--no-sandbox", "--isolated", "--port", "8931", "--host", "0.0.0.0"]
     ports:
       - "8931:8931"
 
