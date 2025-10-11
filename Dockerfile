@@ -1,5 +1,5 @@
 # Use the official n8n image as a base
-FROM n8nio/n8n
+FROM n8nio/n8n:1.114.4
 
 # Switch to the root user to install packages
 USER root
